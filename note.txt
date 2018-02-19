@@ -1,0 +1,81 @@
+1回目 インストールのやり方
+
+2回目 全体的な画面の設定
+    ファイルを見るツールウィンドウ
+    プロジェクトウィンドー
+    logcatウィンドウ　等々
+  shift　x　2回
+  ー＞設定を簡単に切り替えるためのショーカットキー
+
+３回目 プロジェクトウィンドーの見方
+  Gladle Scripts
+    アプリを構築するためのビルドシステム
+  app
+    manifests
+      AndroidManifest.xml　アプリ全体の設定
+    java
+      com.dotinstall.myapp
+        MainActivity.kt のちに詳細を規定
+    res リソースフォルダー
+      drawable  画像を格納
+      layout
+        activity_main.xml  のちに詳細を規定
+      mipmap
+        アプリのアイコンを格納するためのフォルダ
+      values
+        アプリ内で定数で持っておきたい文字列だとかカラーコードなどを管理
+4回目　レイアウトエディターを使ってみよう
+  layout
+    activity_main.xml
+    ドラックアンドドロップで表示していく
+    Component Tree
+      現在表示されている部品の構成を見ることができる。
+
+    画像の部分
+      左　画面のpreview
+      右　Blueprint 部品の構成や配置をわかりやすく見ることができる
+
+    青いボタンでpreviewやblueprintをいじることも可能
+    その横のボタンは機種、傾き、バージョン、言語を指定している
+
+    textタブでxmlでいろいろいじることも可能
+
+5回目　アプリを起動してみよう
+  仮装デバイスで起動
+    ３つボタンで位置情報とか詳細な設定をいじることが可能
+
+6回目　TextViewを配置しよう
+  ドラックアンドドロップで画面に表示
+  アイコンの丸い部分でそいつの画面嬢のどこに表示するかを規定
+    横にしても中央に位置している
+  右側にPalleteの詳細を表示し設定できる
+
+7回目　ボタンを配置しよう
+  基本的に６回目と一緒
+  Warninngー＞Hardcoded text
+    Androidアプリでは、部品化するしていることが推奨されているから
+      多言語対応するときとかテキストを使い回すときに便利だから
+
+8回目 string.xmlで値を管理してみよう
+  Hardcoded textを修正する方法
+    １textの横の・・・をクリックして値のAdd new resouce/New String Valueをクリックし設定
+    ２エラーメッセージのfixからいろいろ設定できる。
+  これらの設定した値はvalues/string.xmlで見ることや編集も可能
+  この値を使う場合は＠string/~で
+  これらの定義した値はアプリ全体で使用することも可能
+
+9回目 メソッドを実装してみよう
+button属性のonClick属性に関数を仕込む　atriibuteで設定
+java
+  com.dotinstall.myapp
+    MainActivity.ktー＞MainActivityの画面に何かが起きたときにどの処理を行うかを書くためのファイル
+      onCreate関数　Activityが最初に作られたときに何をするかという処理
+      functionを立てる際
+        引数に赤線になるときがあるのだが、Viewクラスが読み込まれていないよいうエラー
+          option+Enterで自動的にクラスを読み込まれエラーが消える。
+        atributeで設定した関数を立てて色々変える
+10回目 アプリを更新
+  androidアプリの最新機能
+    イナズママーク
+      簡単な変更だったら、最初からアプリをビルドし直すのではなく、
+      いい感じに高速で立ち上げ直してくれる
